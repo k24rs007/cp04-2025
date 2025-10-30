@@ -184,8 +184,15 @@
     
     // ButtonAがクリックされた時の処理
     function btnAClick(e){
-        active=true;
-        startTime=new Date();
+        //active=true;
+        //startTime=new Date();
+        if(!active && rest>0){
+            active=true;
+            startTime=new Date()-etime*1000;
+        }else{
+            active=true;
+            startTime=new Date();
+        }
         
         
     }
