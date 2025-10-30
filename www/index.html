@@ -155,7 +155,7 @@
     var period=0;
     var rest=0;
     var etime=0;
-    var rb=new Date()*1000/7;
+    var rb=period/7;
 
 
     
@@ -216,6 +216,7 @@
             //active=true;
             startTime=new Date();
             rest=0;
+            $("body").css("background-color","skyblue");
         }
     }
     
@@ -233,11 +234,23 @@
                 alarm();
             }
 
-            if(0<etime && etime<rb){
+            var rb=period/7;
+            if(etime<rb){
+                $("body").css("background-color","purple");
+            }else if(etime<2*rb){
                 $("body").css("background-color","navy");
-            }else if(rb<etime && etime<2*rb){
+            }else if(etime<3*rb){
                 $("body").css("background-color","blue");
+            }else if(etime<4*rb){
+                $("body").css("background-color","green");
+            }else if(etime<5*rb){
+                $("body").css("background-color","yellow");
+            }else if(etime<6*rb){
+                $("body").css("background-color","orange");
+            }else{
+                $("body").css("background-color","red");
             }
+
 
         }
         
